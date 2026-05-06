@@ -9,28 +9,24 @@
   :root{--ink:#1a1410;--paper:#f5f0e8;--gold:#9a7b3f;--gold-light:#c9a55a;--muted:#6b6358;--border:#c8bfa8;--white:#fdfaf4;--cat-1:#2d5a8e;--cat-2:#3d7a4e;--cat-3:#7a3d2d;--cat-4:#5a3d7a;--cat-5:#7a6b2d;}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;}
-
-  /* Lock */
   #lock-screen{position:fixed;inset:0;z-index:9999;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;}
   .lock-title{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:700;letter-spacing:4px;color:var(--gold-light);margin-bottom:6px;}
-  .lock-sub{font-size:12px;color:rgba(201,165,90,0.6);letter-spacing:2px;margin-bottom:40px;}
+  .lock-sub{font-size:11px;color:rgba(201,165,90,0.6);letter-spacing:1px;margin-bottom:40px;}
   .lock-divider{width:40px;height:1px;background:var(--gold);margin-bottom:40px;}
   .lock-dots{display:flex;gap:14px;margin-bottom:32px;}
   .lock-dot{width:14px;height:14px;border-radius:50%;border:2px solid rgba(201,165,90,0.5);background:transparent;transition:all 0.15s;}
   .lock-dot.filled{background:var(--gold-light);border-color:var(--gold-light);}
   .lock-keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:240px;}
-  .lock-key{height:64px;border-radius:14px;border:1.5px solid rgba(201,165,90,0.25);background:rgba(255,255,255,0.05);color:var(--paper);font-size:22px;cursor:pointer;transition:all 0.12s;display:flex;align-items:center;justify-content:center;}
+  .lock-key{height:64px;border-radius:14px;border:1.5px solid rgba(201,165,90,0.25);background:rgba(255,255,255,0.05);color:var(--paper);font-size:22px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;transition:all 0.12s;display:flex;align-items:center;justify-content:center;}
   .lock-key:active{background:rgba(201,165,90,0.2);transform:scale(0.94);}
   .lock-key.del{font-size:16px;color:rgba(201,165,90,0.7);}
-  .lock-error{margin-top:20px;font-size:13px;color:#e05555;min-height:20px;text-align:center;}
+  .lock-error{margin-top:20px;font-size:13px;color:#e05555;letter-spacing:1px;min-height:20px;text-align:center;}
   @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
   .shake{animation:shake 0.3s ease;}
-
-  /* Main */
   #main-content{display:none;}
-  .header{background:var(--ink);padding:28px 20px 20px;text-align:center;position:relative;overflow:hidden;}
+  .header{background:var(--ink);color:var(--paper);padding:28px 20px 20px;text-align:center;position:relative;overflow:hidden;}
   .header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.02) 20px,rgba(255,255,255,0.02) 40px);}
-  .header-title{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:700;letter-spacing:4px;color:var(--paper);position:relative;}
+  .header-title{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:700;letter-spacing:4px;position:relative;}
   .header-sub{font-size:12px;color:var(--gold-light);letter-spacing:2px;margin-top:6px;position:relative;}
   .header-divider{width:40px;height:1px;background:var(--gold);margin:12px auto 0;position:relative;}
   .summary-section{padding:20px 16px 8px;}
@@ -48,61 +44,34 @@
   .cat-0{background:#e8eef6;color:var(--cat-1)}.cat-1{background:#e8f2eb;color:var(--cat-2)}.cat-2{background:#f2e8e6;color:var(--cat-3)}.cat-3{background:#eee8f4;color:var(--cat-4)}.cat-4{background:#f4f0e0;color:var(--cat-5)}
   .filter-bar{padding:12px 16px 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;}
   .filter-bar::-webkit-scrollbar{display:none;}
-  .filter-btn{flex-shrink:0;padding:6px 14px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-size:13px;cursor:pointer;transition:all 0.15s;}
+  .filter-btn{flex-shrink:0;padding:6px 14px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-size:13px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;transition:all 0.15s;}
   .filter-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
   .search-wrap{padding:12px 16px;}
-  .search-input{width:100%;padding:10px 16px 10px 40px;border-radius:24px;border:1.5px solid var(--border);background:var(--white);font-size:14px;color:var(--ink);outline:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b6358' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:14px center;}
+  .search-input{width:100%;padding:10px 16px 10px 40px;border-radius:24px;border:1.5px solid var(--border);background:var(--white);font-size:14px;font-family:'Noto Sans TC',sans-serif;color:var(--ink);outline:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b6358' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:14px center;}
+  .search-input:focus{border-color:var(--ink);}
   .list-section{padding:0 16px 16px;}
   .list-header{display:flex;justify-content:space-between;align-items:center;padding:12px 2px 8px;border-bottom:1px solid var(--border);margin-bottom:2px;}
   .list-header-title{font-family:'Noto Serif TC',serif;font-size:16px;font-weight:700;}
   .list-header-count{font-size:12px;color:var(--muted);}
-  .record-item{display:flex;align-items:center;padding:13px 4px;border-bottom:1px solid rgba(200,191,168,0.4);gap:12px;}
-  .record-avatar{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;}
+  .record-item{display:flex;align-items:center;padding:13px 4px;border-bottom:1px solid rgba(200,191,168,0.4);gap:12px;animation:fadeIn 0.2s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .record-avatar{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;font-family:'Noto Serif TC',serif;}
   .record-info{flex:1;min-width:0;}
   .record-name{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .record-relation{font-size:11px;color:var(--muted);margin-top:2px;}
   .record-right{text-align:right;flex-shrink:0;}
   .record-amount{font-family:'Noto Serif TC',serif;font-size:16px;font-weight:500;}
-  .record-gift{font-size:11px;color:var(--muted);margin-top:2px;max-width:100px;line-height:1.3;}
+  .record-gift{font-size:11px;color:var(--muted);margin-top:2px;max-width:100px;text-align:right;line-height:1.3;}
   .amount-cash{color:var(--ink)}.amount-gift{color:var(--gold);font-size:13px;}
   .no-results{text-align:center;padding:40px 20px;color:var(--muted);font-size:14px;}
   .cat-tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle;}
-  .delete-btn{background:none;border:none;color:#ccc;font-size:18px;cursor:pointer;padding:4px 8px;display:none;}
-  .admin-mode .delete-btn{display:block;}
-
-  /* Action bar */
-  .action-bar{padding:12px 16px;display:flex;gap:8px;}
-  .btn{flex:1;padding:11px;border-radius:12px;border:none;font-size:14px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;font-weight:500;}
-  .btn-add{background:var(--ink);color:var(--gold-light);}
-  .btn-export{background:var(--gold-light);color:var(--ink);}
-
-  /* Modal */
-  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;display:none;align-items:flex-end;justify-content:center;}
-  .modal-overlay.show{display:flex;}
-  .modal{background:var(--white);border-radius:20px 20px 0 0;padding:24px 20px;width:100%;max-width:500px;}
-  .modal-title{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;margin-bottom:20px;}
-  .form-group{margin-bottom:14px;}
-  .form-label{font-size:12px;color:var(--muted);margin-bottom:6px;display:block;letter-spacing:1px;}
-  .form-input,.form-select{width:100%;padding:11px 14px;border-radius:10px;border:1.5px solid var(--border);background:var(--paper);font-size:15px;font-family:'Noto Sans TC',sans-serif;color:var(--ink);outline:none;}
-  .form-input:focus,.form-select:focus{border-color:var(--ink);}
-  .modal-btns{display:flex;gap:10px;margin-top:20px;}
-  .btn-cancel{flex:1;padding:13px;border-radius:12px;border:1.5px solid var(--border);background:transparent;font-size:15px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;color:var(--muted);}
-  .btn-submit{flex:2;padding:13px;border-radius:12px;border:none;background:var(--ink);color:var(--gold-light);font-size:15px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;font-weight:500;}
-
-  /* Print */
-  @media print{
-    #lock-screen,#main-content .action-bar,.filter-bar,.search-wrap,.delete-btn{display:none!important;}
-    body{background:white;}
-    .summary-total{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-    .cat-card{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  }
 </style>
 </head>
 <body>
 
 <div id="lock-screen">
-  <div class="lock-title">奠儀紀錄</div>
-  <div class="lock-sub">請輸入密碼</div>
+  <div class="lock-title" style="font-size:20px;letter-spacing:3px;">陳媽張氏庭萱夫人</div>
+  <div class="lock-sub" style="font-size:10px;letter-spacing:2px;">奠儀紀錄　請輸入密碼</div>
   <div class="lock-divider"></div>
   <div class="lock-dots">
     <div class="lock-dot" id="d0"></div>
@@ -148,10 +117,6 @@
     </div>
     <div class="cat-cards" id="cat-cards"></div>
   </div>
-  <div class="action-bar">
-    <button class="btn btn-add" onclick="openModal()">＋ 新增記錄</button>
-    <button class="btn btn-export" onclick="exportPDF()">↓ 匯出 PDF</button>
-  </div>
   <div class="filter-bar" id="filter-bar">
     <button class="filter-btn active" data-cat="全部">全部</button>
   </div>
@@ -167,58 +132,16 @@
   </div>
 </div>
 
-<!-- Add Modal -->
-<div class="modal-overlay" id="modal">
-  <div class="modal">
-    <div class="modal-title">新增記錄</div>
-    <div class="form-group">
-      <label class="form-label">類別</label>
-      <select class="form-select" id="f-cat">
-        <option value="親戚">親戚</option>
-        <option value="同事">同事</option>
-        <option value="政治">政治</option>
-        <option value="企業">企業</option>
-        <option value="朋友">朋友</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label class="form-label">關係／單位</label>
-      <input class="form-input" id="f-relation" placeholder="例：同事、Toyota…">
-    </div>
-    <div class="form-group">
-      <label class="form-label">姓名</label>
-      <input class="form-input" id="f-name" placeholder="姓名（可留空）">
-    </div>
-    <div class="form-group">
-      <label class="form-label">現金（元）</label>
-      <input class="form-input" id="f-cash" type="number" placeholder="0">
-    </div>
-    <div class="form-group">
-      <label class="form-label">實物禮品</label>
-      <input class="form-input" id="f-gift" placeholder="例：花禮1對（可留空）">
-    </div>
-    <div class="modal-btns">
-      <button class="btn-cancel" onclick="closeModal()">取消</button>
-      <button class="btn-submit" onclick="submitRecord()">新增</button>
-    </div>
-  </div>
-</div>
-
 <script>
 var PASSWORD='0315';
-var ADMIN_PASSWORD='1209';
 var entered='';
-var isAdmin=false;
-
 function keyPress(num){if(entered.length>=4)return;entered+=num;updateDots();if(entered.length===4)setTimeout(checkPassword,150);}
 function keyDel(){entered=entered.slice(0,-1);document.getElementById('lock-error').textContent='';updateDots();}
 function updateDots(){for(var i=0;i<4;i++){document.getElementById('d'+i).classList.toggle('filled',i<entered.length);}}
 function checkPassword(){
-  if(entered===PASSWORD||entered===ADMIN_PASSWORD){
-    isAdmin=(entered===ADMIN_PASSWORD);
+  if(entered===PASSWORD){
     document.getElementById('lock-screen').style.display='none';
     document.getElementById('main-content').style.display='block';
-    if(isAdmin)document.getElementById('main-content').classList.add('admin-mode');
     initApp();
   }else{
     var el=document.getElementById('lock-error');
@@ -233,11 +156,6 @@ document.addEventListener('keydown',function(e){
   if(e.key==='Backspace')keyDel();
 });
 
-function openModal(){document.getElementById('modal').classList.add('show');}
-function closeModal(){document.getElementById('modal').classList.remove('show');}
-
-function exportPDF(){window.print();}
-
 function initApp(){
   var categories=[
     {name:'親戚',cls:'cat-0',color:'#2d5a8e',bg:'#e8eef6'},
@@ -247,104 +165,91 @@ function initApp(){
     {name:'朋友',cls:'cat-4',color:'#7a6b2d',bg:'#f4f0e0'},
   ];
   var records=[
-    {id:'1',cat:'親戚',relation:'妹妹',name:'廖佳筠',cash:5000,gift:''},
-    {id:'2',cat:'親戚',relation:'二哥',name:'廖信維',cash:2500,gift:''},
-    {id:'3',cat:'親戚',relation:'宜蘭表兄',name:'張楙宗',cash:5000,gift:''},
-    {id:'4',cat:'親戚',relation:'堂兄弟',name:'陳建文 陳俊谷 陳俊成',cash:5100,gift:''},
-    {id:'5',cat:'親戚',relation:'堂弟',name:'陳威諺',cash:0,gift:'花禮一對'},
-    {id:'6',cat:'親戚',relation:'阿姨',name:'王春敏',cash:2100,gift:''},
-    {id:'7',cat:'親戚',relation:'阿姨',name:'王春滿',cash:2500,gift:''},
-    {id:'8',cat:'親戚',relation:'阿姨',name:'王素盡 王春桃',cash:1500,gift:''},
-    {id:'9',cat:'親戚',relation:'表哥表嫂',name:'張楙宗 陳楹宜',cash:0,gift:'花禮1對'},
-    {id:'10',cat:'親戚',relation:'胞弟',name:'陳正勳 林芸洳',cash:5100,gift:''},
-    {id:'11',cat:'親戚',relation:'哥哥',name:'余錦文',cash:0,gift:'蓮花塔1對'},
-    {id:'12',cat:'親戚',relation:'哥哥',name:'余錦順',cash:0,gift:'蓮花塔1對'},
-    {id:'13',cat:'親戚',relation:'親戚',name:'陳正勳 林芸洳 陳紹恩 陳正亮',cash:0,gift:'花禮1對'},
-    {id:'14',cat:'親戚',relation:'堂妹',name:'秋萍 雅瑋',cash:3000,gift:''},
-    {id:'15',cat:'同事',relation:'西螺同事',name:'李明達',cash:1100,gift:''},
-    {id:'16',cat:'同事',relation:'同事',name:'廖唐淋',cash:2100,gift:''},
-    {id:'17',cat:'同事',relation:'後學',name:'吳信賢 黃雅麗',cash:1100,gift:''},
-    {id:'18',cat:'同事',relation:'同事',name:'程英誌',cash:1100,gift:''},
-    {id:'19',cat:'同事',relation:'同事',name:'郭逸峰',cash:1100,gift:''},
-    {id:'20',cat:'同事',relation:'同事',name:'柯明儒',cash:2500,gift:''},
-    {id:'21',cat:'同事',relation:'同事',name:'蔡弘達',cash:2500,gift:''},
-    {id:'22',cat:'同事',relation:'同事',name:'陳映廷',cash:1100,gift:''},
-    {id:'23',cat:'同事',relation:'同事',name:'張育翔',cash:1300,gift:''},
-    {id:'24',cat:'同事',relation:'同事',name:'李建榮',cash:1100,gift:''},
-    {id:'25',cat:'同事',relation:'同事',name:'陳辰雄',cash:1500,gift:''},
-    {id:'26',cat:'同事',relation:'同事',name:'盧忠和',cash:1500,gift:''},
-    {id:'27',cat:'同事',relation:'同事',name:'黃益誠',cash:1100,gift:''},
-    {id:'28',cat:'同事',relation:'同事',name:'黃南誠',cash:1500,gift:''},
-    {id:'29',cat:'同事',relation:'同事',name:'陳宏晟',cash:1500,gift:''},
-    {id:'30',cat:'同事',relation:'同事',name:'李孟聰',cash:1500,gift:''},
-    {id:'31',cat:'同事',relation:'同事',name:'吳文政',cash:2500,gift:''},
-    {id:'32',cat:'同事',relation:'同事',name:'張家宏',cash:1500,gift:''},
-    {id:'33',cat:'同事',relation:'煉一廠',name:'李煌斌',cash:1100,gift:''},
-    {id:'34',cat:'同事',relation:'煉一廠',name:'陳弘洋',cash:1100,gift:''},
-    {id:'35',cat:'同事',relation:'煉一廠',name:'王宏昇',cash:1100,gift:''},
-    {id:'36',cat:'同事',relation:'煉一廠',name:'張恆嘉',cash:1100,gift:''},
-    {id:'37',cat:'同事',relation:'煉一廠',name:'林柏鴻',cash:1100,gift:''},
-    {id:'38',cat:'同事',relation:'煉一廠',name:'黃仲瑜',cash:1100,gift:''},
-    {id:'39',cat:'同事',relation:'煉一廠',name:'翁育順',cash:1100,gift:''},
-    {id:'40',cat:'同事',relation:'同事',name:'江建成',cash:1100,gift:''},
-    {id:'41',cat:'同事',relation:'同事',name:'蘇峻賢',cash:1100,gift:''},
-    {id:'42',cat:'同事',relation:'同事',name:'陳韋元',cash:1100,gift:''},
-    {id:'43',cat:'同事',relation:'同事',name:'陳俊杉',cash:2100,gift:''},
-    {id:'44',cat:'同事',relation:'同事',name:'許恆聞',cash:1100,gift:''},
-    {id:'45',cat:'同事',relation:'同事',name:'建良',cash:1100,gift:''},
-    {id:'46',cat:'同事',relation:'同事',name:'王志卿',cash:2100,gift:''},
-    {id:'47',cat:'同事',relation:'同事',name:'王振輝',cash:1500,gift:''},
-    {id:'48',cat:'同事',relation:'塑化煉一廠',name:'陳盈村',cash:2100,gift:''},
-    {id:'49',cat:'同事',relation:'塑化煉一廠',name:'孟祥庶',cash:2100,gift:''},
-    {id:'50',cat:'同事',relation:'台塑石化煉製一廠全體同仁',name:'',cash:0,gift:'花禮1對'},
-    {id:'51',cat:'同事',relation:'台塑石化資深副總',name:'林智清',cash:0,gift:'花禮1對'},
-    {id:'52',cat:'同事',relation:'台塑石化資深經理',name:'常哲 林長昇 郭國良',cash:0,gift:'花禮1對'},
-    {id:'53',cat:'政治',relation:'元長代表會秘書',name:'鄭其宗',cash:3100,gift:''},
-    {id:'54',cat:'政治',relation:'元長鄉民代表會',name:'劉東芳',cash:0,gift:'蓮花塔一對'},
-    {id:'55',cat:'政治',relation:'元長鄉村長聯誼會會長',name:'陳中一',cash:0,gift:'蓮花塔一對'},
-    {id:'56',cat:'政治',relation:'元長鄉民代表會主席 李宗懋 副主席 徐銘欽',name:'',cash:0,gift:'花禮一對'},
-    {id:'57',cat:'政治',relation:'雲林縣議會議長',name:'黃凱',cash:0,gift:'蘭花1盆'},
-    {id:'58',cat:'政治',relation:'',name:'李育誠',cash:0,gift:'蓮花塔一對'},
-    {id:'59',cat:'政治',relation:'',name:'陳登錦',cash:0,gift:'蘭花盆一盆'},
-    {id:'60',cat:'企業',relation:'日新坤公司',name:'',cash:11000,gift:''},
-    {id:'61',cat:'企業',relation:'Toyota',name:'王麗香',cash:1500,gift:''},
-    {id:'62',cat:'企業',relation:'榮順汽車',name:'陳俊丁',cash:5100,gift:''},
-    {id:'63',cat:'企業',relation:'嘉楠集團總裁',name:'陳和春',cash:0,gift:'花禮1對'},
-    {id:'64',cat:'企業',relation:'亞曼達運動科技',name:'高世明',cash:0,gift:'米塔十一層1對'},
-    {id:'65',cat:'企業',relation:'塑化麥寮企業工會理事長',name:'林嘉慶',cash:0,gift:'蘭花1盆'},
-    {id:'66',cat:'企業',relation:'北港新豐裕',name:'',cash:0,gift:'蘭花1盆'},
-    {id:'67',cat:'企業',relation:'宜寶企業',name:'',cash:0,gift:'花禮一對'},
-    {id:'68',cat:'企業',relation:'宜寶企業董事長',name:'王志強',cash:7000,gift:''},
-    {id:'69',cat:'朋友',relation:'女兒朋友',name:'楊雅婷 沈宥伶',cash:5100,gift:'巨無霸蓮花塔1對'},
-    {id:'70',cat:'朋友',relation:'西螺朋友',name:'廖文志',cash:3500,gift:''},
-    {id:'71',cat:'朋友',relation:'虎尾',name:'謝勇輝',cash:2100,gift:''},
-    {id:'72',cat:'朋友',relation:'',name:'周木印',cash:2100,gift:''},
-    {id:'73',cat:'朋友',relation:'四湖朋友',name:'陳永添',cash:3100,gift:''},
-    {id:'74',cat:'朋友',relation:'',name:'陳永淵',cash:3100,gift:''},
-    {id:'75',cat:'朋友',relation:'斗南',name:'劉茂水',cash:3500,gift:''},
-    {id:'76',cat:'朋友',relation:'瓦窯',name:'陳逸昌',cash:2100,gift:''},
-    {id:'77',cat:'朋友',relation:'朋友',name:'林秀莉',cash:2100,gift:''},
-    {id:'78',cat:'朋友',relation:'同學',name:'陳建彰',cash:2100,gift:''},
-    {id:'79',cat:'朋友',relation:'嘉義朋友',name:'姚金戍',cash:0,gift:'蘭花1盆'},
+    {cat:'親戚',relation:'妹妹',name:'廖佳筠',cash:5000,gift:''},
+    {cat:'親戚',relation:'二哥',name:'廖信維',cash:2500,gift:''},
+    {cat:'親戚',relation:'宜蘭表兄',name:'張楙宗',cash:5000,gift:''},
+    {cat:'親戚',relation:'堂兄弟',name:'陳建文 陳俊谷 陳俊成',cash:5100,gift:''},
+    {cat:'親戚',relation:'堂弟',name:'陳威諺',cash:0,gift:'花禮一對'},
+    {cat:'親戚',relation:'阿姨',name:'王春敏',cash:2100,gift:''},
+    {cat:'親戚',relation:'阿姨',name:'王春滿',cash:2500,gift:''},
+    {cat:'親戚',relation:'阿姨',name:'王素盡 王春桃',cash:1500,gift:''},
+    {cat:'親戚',relation:'表哥表嫂',name:'張楙宗 陳楹宜',cash:0,gift:'花禮1對'},
+    {cat:'親戚',relation:'胞弟',name:'陳正勳 林芸洳',cash:5100,gift:''},
+    {cat:'親戚',relation:'哥哥',name:'余錦文',cash:0,gift:'蓮花塔1對'},
+    {cat:'親戚',relation:'哥哥',name:'余錦順',cash:0,gift:'蓮花塔1對'},
+    {cat:'親戚',relation:'親戚',name:'陳正勳 林芸洳 陳紹恩 陳正亮',cash:0,gift:'花禮1對'},
+    {cat:'親戚',relation:'堂妹',name:'秋萍 雅瑋',cash:3000,gift:''},
+    {cat:'同事',relation:'西螺同事',name:'李明達',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'廖唐淋',cash:2100,gift:''},
+    {cat:'同事',relation:'後學',name:'吳信賢 黃雅麗',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'程英誌',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'郭逸峰',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'柯明儒',cash:2500,gift:''},
+    {cat:'同事',relation:'同事',name:'蔡弘達',cash:2500,gift:''},
+    {cat:'同事',relation:'同事',name:'陳映廷',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'張育翔',cash:1300,gift:''},
+    {cat:'同事',relation:'同事',name:'李建榮',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'陳辰雄',cash:1500,gift:''},
+    {cat:'同事',relation:'同事',name:'盧忠和',cash:1500,gift:''},
+    {cat:'同事',relation:'同事',name:'黃益誠',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'黃南誠',cash:1500,gift:''},
+    {cat:'同事',relation:'同事',name:'陳宏晟',cash:1500,gift:''},
+    {cat:'同事',relation:'同事',name:'李孟聰',cash:1500,gift:''},
+    {cat:'同事',relation:'同事',name:'吳文政',cash:2500,gift:''},
+    {cat:'同事',relation:'同事',name:'張家宏',cash:1500,gift:''},
+    {cat:'同事',relation:'煉一廠',name:'李煌斌',cash:1100,gift:''},
+    {cat:'同事',relation:'煉一廠',name:'陳弘洋',cash:1100,gift:''},
+    {cat:'同事',relation:'煉一廠',name:'王宏昇',cash:1100,gift:''},
+    {cat:'同事',relation:'煉一廠',name:'張恆嘉',cash:1100,gift:''},
+    {cat:'同事',relation:'煉一廠',name:'林柏鴻',cash:1100,gift:''},
+    {cat:'同事',relation:'煉一廠',name:'黃仲瑜',cash:1100,gift:''},
+    {cat:'同事',relation:'煉一廠',name:'翁育順',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'江建成',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'蘇峻賢',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'陳韋元',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'陳俊杉',cash:2100,gift:''},
+    {cat:'同事',relation:'同事',name:'許恆聞',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'建良',cash:1100,gift:''},
+    {cat:'同事',relation:'同事',name:'王志卿',cash:2100,gift:''},
+    {cat:'同事',relation:'同事',name:'王振輝',cash:1500,gift:''},
+    {cat:'同事',relation:'塑化煉一廠',name:'陳盈村',cash:2100,gift:''},
+    {cat:'同事',relation:'塑化煉一廠',name:'孟祥庶',cash:2100,gift:''},
+    {cat:'同事',relation:'台塑石化煉製一廠全體同仁',name:'',cash:0,gift:'花禮1對'},
+    {cat:'同事',relation:'台塑石化資深副總',name:'林智清',cash:0,gift:'花禮1對'},
+    {cat:'同事',relation:'台塑石化資深經理',name:'常哲 林長昇 郭國良',cash:0,gift:'花禮1對'},
+    {cat:'政治',relation:'元長代表會秘書',name:'鄭其宗',cash:3100,gift:''},
+    {cat:'政治',relation:'元長鄉民代表會',name:'劉東芳',cash:0,gift:'蓮花塔一對'},
+    {cat:'政治',relation:'元長鄉村長聯誼會會長',name:'陳中一',cash:0,gift:'蓮花塔一對'},
+    {cat:'政治',relation:'元長鄉民代表會主席 李宗懋 副主席 徐銘欽',name:'',cash:0,gift:'花禮一對'},
+    {cat:'政治',relation:'雲林縣議會議長',name:'黃凱',cash:0,gift:'蘭花1盆'},
+    {cat:'政治',relation:'',name:'李育誠',cash:0,gift:'蓮花塔一對'},
+    {cat:'政治',relation:'',name:'陳登錦',cash:0,gift:'蘭花盆一盆'},
+    {cat:'企業',relation:'日新坤公司',name:'',cash:11000,gift:''},
+    {cat:'企業',relation:'Toyota',name:'王麗香',cash:1500,gift:''},
+    {cat:'企業',relation:'榮順汽車',name:'陳俊丁',cash:5100,gift:''},
+    {cat:'企業',relation:'嘉楠集團總裁',name:'陳和春',cash:0,gift:'花禮1對'},
+    {cat:'企業',relation:'亞曼達運動科技',name:'高世明',cash:0,gift:'米塔十一層1對'},
+    {cat:'企業',relation:'塑化麥寮企業工會理事長',name:'林嘉慶',cash:0,gift:'蘭花1盆'},
+    {cat:'企業',relation:'北港新豐裕',name:'',cash:0,gift:'蘭花1盆'},
+    {cat:'企業',relation:'宜寶企業',name:'',cash:0,gift:'花禮一對'},
+    {cat:'企業',relation:'宜寶企業董事長',name:'王志強',cash:7000,gift:''},
+    {cat:'朋友',relation:'女兒朋友',name:'楊雅婷 沈宥伶',cash:5100,gift:'巨無霸蓮花塔1對'},
+    {cat:'朋友',relation:'西螺朋友',name:'廖文志',cash:3500,gift:''},
+    {cat:'朋友',relation:'虎尾',name:'謝勇輝',cash:2100,gift:''},
+    {cat:'朋友',relation:'',name:'周木印',cash:2100,gift:''},
+    {cat:'朋友',relation:'四湖朋友',name:'陳永添',cash:3100,gift:''},
+    {cat:'朋友',relation:'',name:'陳永淵',cash:3100,gift:''},
+    {cat:'朋友',relation:'斗南',name:'劉茂水',cash:3500,gift:''},
+    {cat:'朋友',relation:'瓦窯',name:'陳逸昌',cash:2100,gift:''},
+    {cat:'朋友',relation:'朋友',name:'林秀莉',cash:2100,gift:''},
+    {cat:'朋友',relation:'同學',name:'陳建彰',cash:2100,gift:''},
+    {cat:'朋友',relation:'嘉義朋友',name:'姚金戍',cash:0,gift:'蘭花1盆'},
   ];
-
-  // Load from localStorage
-  var saved=localStorage.getItem('dianyi_records');
-  if(saved){try{var extra=JSON.parse(saved);records=records.concat(extra);}catch(e){}}
-
   var currentCat='全部';
   var searchText='';
-
-  function saveExtra(){
-    var base=79;
-    var extra=records.filter(function(r){return parseInt(r.id)>base;});
-    localStorage.setItem('dianyi_records',JSON.stringify(extra));
-  }
-
   function fmt(n){return n>0?'$'+n.toLocaleString():'';}
   function getCatInfo(name){return categories.find(function(c){return c.name===name;})||{color:'#444',bg:'#eee',cls:'cat-0'};}
   function getInitial(r){var n=r.name||r.relation;return n?n[0]:'・';}
-
   function renderSummary(){
     var totalCash=records.reduce(function(s,r){return s+r.cash;},0);
     var totalGifts=records.filter(function(r){return r.gift;}).length;
@@ -370,7 +275,6 @@ function initApp(){
       container.appendChild(div);
     });
   }
-
   function renderFilters(){
     var bar=document.getElementById('filter-bar');
     categories.forEach(function(cat){
@@ -393,7 +297,6 @@ function initApp(){
       renderList();
     });
   }
-
   function renderList(){
     var q=searchText.trim();
     var filtered=records.slice();
@@ -419,43 +322,13 @@ function initApp(){
           (r.gift?'<div class="record-gift amount-gift">'+r.gift+'</div>':'')+
           (!r.cash&&!r.gift?'<div class="record-amount" style="color:#bbb">—</div>':'')+
         '</div>'+
-        '<button class="delete-btn" onclick="deleteRecord(\''+r.id+'\')">✕</button>'+
       '</div>';
     }).join('');
   }
-
-  window.deleteRecord=function(id){
-    if(!confirm('確定刪除這筆記錄？'))return;
-    records=records.filter(function(r){return r.id!==id;});
-    saveExtra();
-    renderSummary();
-    renderList();
-  };
-
-  window.submitRecord=function(){
-    var cat=document.getElementById('f-cat').value;
-    var relation=document.getElementById('f-relation').value.trim();
-    var name=document.getElementById('f-name').value.trim();
-    var cash=parseInt(document.getElementById('f-cash').value)||0;
-    var gift=document.getElementById('f-gift').value.trim();
-    if(!relation&&!name){alert('請填寫關係/單位 或 姓名');return;}
-    var newId=Date.now().toString();
-    records.push({id:newId,cat:cat,relation:relation,name:name,cash:cash,gift:gift});
-    saveExtra();
-    document.getElementById('f-relation').value='';
-    document.getElementById('f-name').value='';
-    document.getElementById('f-cash').value='';
-    document.getElementById('f-gift').value='';
-    closeModal();
-    renderSummary();
-    renderList();
-  };
-
   document.getElementById('search-input').addEventListener('input',function(e){
     searchText=e.target.value;
     renderList();
   });
-
   renderSummary();
   renderFilters();
   renderList();
